@@ -1,0 +1,23 @@
+<h1>Show Sublink</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @sublink.title %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @sublink.url %>
+  </li>
+
+  <li>
+    <strong>Order:</strong>
+    <%= @sublink.order %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.sublink_path(@conn, :edit, @sublink) %></span> |
+<span><%= link "Back", to: Routes.sublink_path(@conn, :index) %></span>

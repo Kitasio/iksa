@@ -18,6 +18,10 @@ defmodule IksaWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/languages", LanguageController
+    resources "/links", LinkController
+    resources "/sublinks", SublinkController
   end
 
   # Other scopes may use custom stacks.

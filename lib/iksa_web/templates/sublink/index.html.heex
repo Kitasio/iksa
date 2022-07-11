@@ -1,0 +1,30 @@
+<h1>Listing Sublinks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Url</th>
+      <th>Order</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for sublink <- @sublinks do %>
+    <tr>
+      <td><%= sublink.title %></td>
+      <td><%= sublink.url %></td>
+      <td><%= sublink.order %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.sublink_path(@conn, :show, sublink) %></span>
+        <span><%= link "Edit", to: Routes.sublink_path(@conn, :edit, sublink) %></span>
+        <span><%= link "Delete", to: Routes.sublink_path(@conn, :delete, sublink), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Sublink", to: Routes.sublink_path(@conn, :new) %></span>
